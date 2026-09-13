@@ -1,6 +1,6 @@
-temp_morning=float(input("Qual foi a temperatura de manha? "))
-temp_afternoon=float(input("Qual foi a temperatura a tarde? "))
-media_temp=(temp_morning+temp_afternoon)/2
+temp_dia=float(input("Qual foi a temperatura de manha? "))
+temp_tarde=float(input("Qual foi a temperatura a tarde? "))
+media_temp=(temp_dia+temp_tarde)/2
 media_formatada=f"{media_temp:.1f}".replace(".", ",")
 
 if media_temp<20:
