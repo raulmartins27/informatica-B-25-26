@@ -1,3 +1,16 @@
+#listas e variaveis
+produçao_ilha_santiago=[]
+produçao_ilha_snt_antao=[]
+qtd_producao_santiago=0
+qtd_producao_santo_antao=0
+qtd_produtor_santiago=0
+qtd_produtor_santo_antao=0
+contagem_A=0
+contagem_B=0
+total_Santiago=0
+total_Santo_Antao=0
+
+
 #menu
 while True:
     print("REGISTO DA PRODUÇÃO DE GROGUE NA ILHA DE SANTIAGO E DE SANTO ANTÃO.")
@@ -10,19 +23,27 @@ while True:
     print("6. JUNTAR AS DUAS LISTAS")
     print("7. CONSULTAR QUAL FOI A ILHA QUE PRODUZIU MAIS")
     print("8. SAIR")
+
+    
     opcao_menu=-1
     while opcao_menu<1 or opcao_menu>8:
         opcao_menu=int(input("\nEscolha uma opçao entre 1 e 8: "))
-    produçao_ilha_santiago=[]
-    produçao_ilha_snt_antao=[]
+        if opcao_menu<1 or opcao_menu>8:
+            print("Introduza um número inteiro entre 1 e 8.")
 
     #opcao 1 (introduzir dados):
     if opcao_menu==1:
         #producao ilha de santiago
-        produçao_ilha_santiago=-1
-        while produçao_ilha_santiago<0:
-            produçao_ilha_santiago=int(input("\nQuantos produtores existem na ilha de Santiago? "))
-        for produtor in range(produçao_ilha_santiago):
+        produçao_ilha_santiago=[]
+
+        #pergunta quantos produtores existem
+        qtd_produtor_santiago=-1
+        while qtd_produtor_santiago<0:
+            qtd_produtor_santiago=int(input("\nQuantos produtores existem na ilha de Santiago? "))
+
+       #pergunta quantidade produzida por cada produtor
+       # e adiciona a quantidade na lista.
+        for produtor in range(qtd_produtor_santiago):
             qtd_producao_santiago=-1
             while qtd_producao_santiago<0:
                 qtd_producao_santiago=float(input("Qual é a quantidade em litros produzida" \
@@ -36,9 +57,13 @@ while True:
 
         
         #producao ilha do Santo Antao
-        produçao_ilha_snt_antao=-1
-        while produçao_ilha_snt_antao<0:
-            produçao_ilha_snt_antao=int(input("\nQuantos produtores existem na ilha do Santo Antao? "))
+        produçao_ilha_snt_antao=[]
+
+
+        qtd_produtor_santo_antao=-1
+        while qtd_produtor_santo_antao<0:
+            qtd_produtor_santo_antao=int(input("\nQuantos produtores existem na ilha do Santo Antao? "))
+        
         for produtores in range(produçao_ilha_snt_antao):
             qtd_producao_santo_antao=-1
             while qtd_producao_santo_antao<0:
@@ -50,8 +75,6 @@ while True:
                 #contabilizar qtd elementos da lista B:
                 for elementos in qtd_producao_santo_antao:
                     contagem_B+=1
-
-
 
 
     #opcao 2(consultar uma posiçao na lista):
